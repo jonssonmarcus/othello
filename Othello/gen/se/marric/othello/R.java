@@ -24,22 +24,88 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f080002;
+        public static final int Button01=0x7f080011;
+        public static final int Button02=0x7f080010;
+        public static final int Button03=0x7f08000f;
+        public static final int Button04=0x7f08000e;
+        public static final int Button05=0x7f08000d;
+        public static final int Button06=0x7f08000c;
+        public static final int Button07=0x7f08000a;
+        public static final int Button08=0x7f08000b;
+        public static final int Button09=0x7f080015;
+        public static final int Button10=0x7f080013;
+        public static final int Button11=0x7f080016;
+        public static final int Button12=0x7f080014;
+        public static final int Button13=0x7f080017;
+        public static final int Button14=0x7f080009;
+        public static final int Button15=0x7f080018;
+        public static final int Button16=0x7f080012;
+        public static final int Button17=0x7f08001d;
+        public static final int Button18=0x7f08001b;
+        public static final int Button19=0x7f08001e;
+        public static final int Button20=0x7f08001c;
+        public static final int Button21=0x7f08001f;
+        public static final int Button22=0x7f080019;
+        public static final int Button23=0x7f080020;
+        public static final int Button24=0x7f08001a;
+        public static final int Button25=0x7f080025;
+        public static final int Button26=0x7f080023;
+        public static final int Button27=0x7f080026;
+        public static final int Button28=0x7f080024;
+        public static final int Button29=0x7f080027;
+        public static final int Button30=0x7f080021;
+        public static final int Button31=0x7f080028;
+        public static final int Button32=0x7f080022;
+        public static final int Button33=0x7f08002d;
+        public static final int Button34=0x7f08002b;
+        public static final int Button35=0x7f08002e;
+        public static final int Button36=0x7f08002c;
+        public static final int Button37=0x7f08002f;
+        public static final int Button38=0x7f080029;
+        public static final int Button39=0x7f080030;
+        public static final int Button40=0x7f08002a;
+        public static final int Button41=0x7f080035;
+        public static final int Button42=0x7f080033;
+        public static final int Button43=0x7f080036;
+        public static final int Button44=0x7f080034;
+        public static final int Button45=0x7f080037;
+        public static final int Button46=0x7f080031;
+        public static final int Button47=0x7f080038;
+        public static final int Button48=0x7f080032;
+        public static final int Button49=0x7f08003a;
+        public static final int Button50=0x7f08003f;
+        public static final int Button51=0x7f080039;
+        public static final int Button52=0x7f080040;
+        public static final int Button53=0x7f08003b;
+        public static final int Button54=0x7f08003d;
+        public static final int Button55=0x7f08003c;
+        public static final int Button56=0x7f08003e;
+        public static final int action_settings=0x7f080041;
         public static final int button1=0x7f080001;
+        public static final int button2=0x7f080002;
+        public static final int button3=0x7f080003;
+        public static final int button4=0x7f080004;
+        public static final int button5=0x7f080005;
+        public static final int button6=0x7f080006;
+        public static final int button7=0x7f080007;
+        public static final int button8=0x7f080008;
         public static final int textView1=0x7f080000;
     }
     public static final class layout {
-        public static final int activity_main=0x7f030000;
-        public static final int activity_start=0x7f030001;
+        public static final int activity_game=0x7f030000;
+        public static final int activity_main=0x7f030001;
+        public static final int activity_start=0x7f030002;
     }
     public static final class menu {
-        public static final int main=0x7f070000;
-        public static final int start=0x7f070001;
+        public static final int game=0x7f070000;
+        public static final int main=0x7f070001;
+        public static final int start=0x7f070002;
     }
     public static final class string {
         public static final int action_settings=0x7f050001;
         public static final int app_name=0x7f050000;
         public static final int hello_world=0x7f050002;
+        public static final int title_activity_game=0x7f050004;
         public static final int title_activity_start=0x7f050003;
     }
     public static final class style {

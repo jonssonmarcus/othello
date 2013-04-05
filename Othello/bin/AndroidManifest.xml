@@ -26,6 +26,10 @@
             android:name="se.marric.othello.StartActivity"
             android:label="@string/title_activity_start" >
         </activity>
+        <activity
+            android:name="se.marric.othello.GameActivity"
+            android:label="@string/title_activity_game" >
+        </activity>
     </application>
 
 </manifest>
