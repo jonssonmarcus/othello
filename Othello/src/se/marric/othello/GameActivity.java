@@ -1,12 +1,14 @@
 package se.marric.othello;
 
 import android.app.Activity;
+import android.content.Context;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class GameActivity extends Activity {
 
@@ -218,13 +220,50 @@ public class GameActivity extends Activity {
 		}
 	if (!isValidButtonChoosed) {
 		System.out.println("Computer loosed");
+		checkWhoWon();
 	}
 if (!checkIfMoreValidMoves(v)){
 	System.out.println("you loosed");
+	checkWhoWon();
 }
 	isValidButtonChoosed = false;
 		// TODO Auto-generated method stub
 		yourTurn = true;
+	}
+
+	private void checkWhoWon() {
+		int red = 0;
+		int yellow = 0;
+		for (int i = 0; i < 8; i++) {
+			for (int j = 0; j < 8; j++) {
+				if (((OthelloButton)cols[i][j]).getButtonColor() == Color.YELLOW){
+					yellow++;
+				}
+				if (((OthelloButton)cols[i][j]).getButtonColor() == Color.RED){
+					red++;
+				}	
+					
+					
+			}
+			}
+		System.out.println("red = " + red + " yellow = " + yellow);
+		
+		Context context = getApplicationContext();
+		
+		CharSequence text = "";
+		if (red < yellow) {
+			text = "You won!! Red=" + red + " Yellow=" + yellow;
+		}  
+			else if(red == yellow){
+				text = "Tie!! Red=" + red + " Yellow=" + yellow;
+			
+		} else {
+			text = "Computer won!! Red=" + red + " Yellow=" + yellow;
+		}
+		int duration = Toast.LENGTH_LONG;
+
+		Toast toast = Toast.makeText(context, text, duration);
+		toast.show();
 	}
 
 	private Boolean flipMarkers(OthelloButton button, OthelloButton[] tempArray, Boolean realDraw) {
