@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:text="@string/hello_world" />
 
-    <Button
+    <se.marric.othello.OthelloButton
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -24,7 +24,7 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
-    <Button
+    <se.marric.othello.OthelloButton
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -35,7 +35,7 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
-    <Button
+    <se.marric.othello.OthelloButton
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -44,7 +44,7 @@
         android:minHeight="34dip"
         android:minWidth="34dip" />
 
-    <Button
+    <se.marric.othello.OthelloButton
         android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -53,7 +53,7 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
-    <Button
+    <se.marric.othello.OthelloButton
         android:id="@+id/button5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -62,7 +62,7 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
-    <Button
+    <se.marric.othello.OthelloButton
         android:id="@+id/button6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -71,7 +71,7 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
-    <Button
+    <se.marric.othello.OthelloButton
         android:id="@+id/button7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -80,7 +80,7 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
-    <Button
+    <se.marric.othello.OthelloButton
         android:id="@+id/button8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -89,7 +89,7 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
-    <Button
+    <se.marric.othello.OthelloButton
         android:id="@+id/Button9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -98,7 +98,7 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
-    <Button
+    <se.marric.othello.OthelloButton
         android:id="@+id/Button10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -107,7 +107,7 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
-    <Button
+    <se.marric.othello.OthelloButton
         android:id="@+id/Button11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -117,7 +117,7 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
-    <Button
+    <se.marric.othello.OthelloButton
         android:id="@+id/Button12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -126,7 +126,7 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
-    <Button
+    <se.marric.othello.OthelloButton
         android:id="@+id/Button13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -135,7 +135,7 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
-    <Button
+    <se.marric.othello.OthelloButton
         android:id="@+id/Button14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -144,7 +144,7 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
-    <Button
+    <se.marric.othello.OthelloButton
         android:id="@+id/Button15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -154,7 +154,7 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
-    <Button
+    <se.marric.othello.OthelloButton
         android:id="@+id/Button16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -163,7 +163,7 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
-    <Button
+    <se.marric.othello.OthelloButton
         android:id="@+id/Button17"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -172,7 +172,7 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
-    <Button
+    <se.marric.othello.OthelloButton
         android:id="@+id/Button18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -181,7 +181,7 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
-    <Button
+    <se.marric.othello.OthelloButton
         android:id="@+id/Button19"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -190,7 +190,7 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
-    <Button
+    <se.marric.othello.OthelloButton
         android:id="@+id/Button20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -199,7 +199,7 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
-    <Button
+    <se.marric.othello.OthelloButton
         android:id="@+id/Button21"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -209,7 +209,7 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
-    <Button
+    <se.marric.othello.OthelloButton
         android:id="@+id/Button22"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -219,7 +219,7 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
-    <Button
+    <se.marric.othello.OthelloButton
         android:id="@+id/Button23"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -228,7 +228,7 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
-    <Button
+    <se.marric.othello.OthelloButton
         android:id="@+id/Button24"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -237,7 +237,7 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
-    <Button
+    <se.marric.othello.OthelloButton
         android:id="@+id/Button25"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -246,7 +246,7 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
-    <Button
+    <se.marric.othello.OthelloButton
         android:id="@+id/Button26"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -255,7 +255,7 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
-    <Button
+    <se.marric.othello.OthelloButton
         android:id="@+id/Button27"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -264,7 +264,7 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
-    <Button
+    <se.marric.othello.OthelloButton
         android:id="@+id/Button28"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -273,7 +273,7 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
-    <Button
+    <se.marric.othello.OthelloButton
         android:id="@+id/Button29"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -282,7 +282,7 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
-    <Button
+    <se.marric.othello.OthelloButton
         android:id="@+id/Button30"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -291,7 +291,7 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
-    <Button
+    <se.marric.othello.OthelloButton
         android:id="@+id/Button31"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -300,7 +300,7 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
-    <Button
+    <se.marric.othello.OthelloButton
         android:id="@+id/Button32"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -309,7 +309,7 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
-    <Button
+    <se.marric.othello.OthelloButton
         android:id="@+id/Button33"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -318,7 +318,7 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
-    <Button
+    <se.marric.othello.OthelloButton
         android:id="@+id/Button34"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -327,7 +327,7 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
-    <Button
+    <se.marric.othello.OthelloButton
         android:id="@+id/Button35"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -337,7 +337,7 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
-    <Button
+    <se.marric.othello.OthelloButton
         android:id="@+id/Button36"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -347,7 +347,7 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
-    <Button
+    <se.marric.othello.OthelloButton
         android:id="@+id/Button37"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -356,7 +356,7 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
-    <Button
+    <se.marric.othello.OthelloButton
         android:id="@+id/Button38"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -366,7 +366,7 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
-    <Button
+    <se.marric.othello.OthelloButton
         android:id="@+id/Button39"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -376,7 +376,7 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
-    <Button
+    <se.marric.othello.OthelloButton
         android:id="@+id/Button40"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -385,7 +385,7 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
-    <Button
+    <se.marric.othello.OthelloButton
         android:id="@+id/Button41"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -394,7 +394,7 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
-    <Button
+    <se.marric.othello.OthelloButton
         android:id="@+id/Button42"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -403,7 +403,7 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
-    <Button
+    <se.marric.othello.OthelloButton
         android:id="@+id/Button43"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -412,7 +412,7 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
-    <Button
+    <se.marric.othello.OthelloButton
         android:id="@+id/Button44"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -422,7 +422,7 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
-    <Button
+    <se.marric.othello.OthelloButton
         android:id="@+id/Button45"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -431,7 +431,7 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
-    <Button
+    <se.marric.othello.OthelloButton
         android:id="@+id/Button46"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -440,7 +440,7 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
-    <Button
+    <se.marric.othello.OthelloButton
         android:id="@+id/Button47"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -450,7 +450,7 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
-    <Button
+    <se.marric.othello.OthelloButton
         android:id="@+id/Button48"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -460,7 +460,7 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
-    <Button
+    <se.marric.othello.OthelloButton
         android:id="@+id/Button49"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -469,7 +469,7 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
-    <Button
+    <se.marric.othello.OthelloButton
         android:id="@+id/Button50"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -479,7 +479,7 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
-    <Button
+    <se.marric.othello.OthelloButton
         android:id="@+id/Button51"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -488,7 +488,7 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
-    <Button
+    <se.marric.othello.OthelloButton
         android:id="@+id/Button52"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -498,7 +498,7 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
-    <Button
+    <se.marric.othello.OthelloButton
         android:id="@+id/Button53"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -507,7 +507,7 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
-    <Button
+    <se.marric.othello.OthelloButton
         android:id="@+id/Button54"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -517,7 +517,7 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
-    <Button
+    <se.marric.othello.OthelloButton
         android:id="@+id/Button55"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -526,7 +526,7 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
-    <Button
+    <se.marric.othello.OthelloButton
         android:id="@+id/Button56"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -536,7 +536,7 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
-    <Button
+    <se.marric.othello.OthelloButton
         android:id="@+id/Button57"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -545,7 +545,7 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
-    <Button
+    <se.marric.othello.OthelloButton
         android:id="@+id/Button58"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -555,7 +555,7 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
-    <Button
+    <se.marric.othello.OthelloButton
         android:id="@+id/Button59"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -565,7 +565,7 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
-    <Button
+    <se.marric.othello.OthelloButton
         android:id="@+id/Button60"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -574,7 +574,7 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
-    <Button
+    <se.marric.othello.OthelloButton
         android:id="@+id/Button61"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -583,8 +583,8 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
-    <Button
-        android:id="@+id/Button62"
+    <se.marric.othello.OthelloButton
+        android:id="@+id/Button06"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/Button54"
@@ -592,8 +592,8 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
-    <Button
-        android:id="@+id/Button63"
+    <se.marric.othello.OthelloButton
+        android:id="@+id/Button07"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/Button55"
@@ -601,8 +601,8 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
-    <Button
-        android:id="@+id/Button64"
+    <se.marric.othello.OthelloButton
+        android:id="@+id/Button08"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/Button55"
