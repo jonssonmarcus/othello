@@ -15,9 +15,10 @@ public class StartActivity extends Activity {
 		setContentView(R.layout.activity_start);
 		
 		
-		final Button button = (Button) findViewById(R.id.button1);
+		final OthelloButton button = (OthelloButton) findViewById(R.id.button1);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+            	
             	startGame();
                 // Perform action on click
             }
