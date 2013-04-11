@@ -1,0 +1,9 @@
+
+
+ilt application files
+*.apk
+*.ap_
+/Othello/bin/*.apk
+/Othello/bin/*.ap_
+*.class
+*.dex

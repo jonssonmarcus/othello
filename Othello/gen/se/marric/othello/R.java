@@ -93,6 +93,7 @@ public final class R {
         public static final int button62=0x7f090041;
         public static final int button7=0x7f090007;
         public static final int button8=0x7f090008;
+        public static final int load_game=0x7f090041;
         public static final int textView1=0x7f090000;
     }
     public static final class layout {
