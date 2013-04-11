@@ -24,6 +24,9 @@ public class GameActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_game);
 		
+		Bundle b = getIntent().getExtras();
+		
+		
 		int startValue = R.id.button1;
 		cols = new OthelloButton[8][8];
 		
@@ -39,6 +42,19 @@ public class GameActivity extends Activity {
 			}
 		}
 	
+		if (b.getString("board") != null){
+			setBoard(b.getString("board"));
+		}
+		
+		if (b.getString("yourColor") != null) {
+			if( b.getString("yourColor").equalsIgnoreCase("yellow") ){
+				currentPlayerColor = Color.YELLOW;
+				otherPlayer = Color.RED;
+			} else {
+				currentPlayerColor = Color.RED;
+				otherPlayer = Color.YELLOW;
+			}
+		}
 		/*
 		final OthelloButton button28 = (OthelloButton) findViewById(R.id.Button28);
 		button28.getBackground().setColorFilter(Color.RED,PorterDuff.Mode.MULTIPLY);
@@ -56,7 +72,6 @@ public class GameActivity extends Activity {
 		button36.getBackground().setColorFilter(Color.YELLOW,PorterDuff.Mode.MULTIPLY);
 		button36.setButtonColor(Color.YELLOW);*/
 	
-		setBoard("rrwrerwyrryyyyyyyyrrrerrryyyyyyrr");
 	}
 
 	protected boolean checkIfMoreValidMoves(View v) {

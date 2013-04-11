@@ -43,7 +43,13 @@ public class StartActivity extends Activity {
 
 	private void startGame() {
 		 Intent i = new Intent(this, GameActivity.class);
-	        startActivity(i);
+	     Bundle b = new Bundle();
+	     b.putString("board", "rrwrerwyrryyyyyyyyrrrerrryyyyyyrr"); //get the board from a WS
+	     b.putString("yourColor", "yellow"); // check in database or with a WS
+	     i.putExtras(b);
+	        
+	     startActivity(i);
+	     finish();
 	}
 	
 	private void getGame() {
