@@ -24,8 +24,6 @@ public class GameActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_game);
 		
-		
-		
 		int startValue = R.id.button1;
 		cols = new OthelloButton[8][8];
 		
@@ -41,6 +39,7 @@ public class GameActivity extends Activity {
 			}
 		}
 	
+		/*
 		final OthelloButton button28 = (OthelloButton) findViewById(R.id.Button28);
 		button28.getBackground().setColorFilter(Color.RED,PorterDuff.Mode.MULTIPLY);
 		button28.setButtonColor(Color.RED);
@@ -55,8 +54,9 @@ public class GameActivity extends Activity {
 		
 		final OthelloButton button36 = (OthelloButton) findViewById(R.id.Button36);
 		button36.getBackground().setColorFilter(Color.YELLOW,PorterDuff.Mode.MULTIPLY);
-		button36.setButtonColor(Color.YELLOW);
+		button36.setButtonColor(Color.YELLOW);*/
 	
+		setBoard("rrwrerwyrryyyyyyyyrrrerrryyyyyyrr");
 	}
 
 	protected boolean checkIfMoreValidMoves(View v) {
@@ -85,11 +85,9 @@ public class GameActivity extends Activity {
 						computerDraw(v);
 
 					}
-
 				}
 			}
 		}
-		
 	}
 	
 	private void makeTheDraw(int y, int x, OthelloButton button) {
@@ -238,14 +236,11 @@ if (!checkIfMoreValidMoves(v)){
 			for (int j = 0; j < 8; j++) {
 				if (((OthelloButton)cols[i][j]).getButtonColor() == Color.YELLOW){
 					yellow++;
-				}
-				if (((OthelloButton)cols[i][j]).getButtonColor() == Color.RED){
-					red++;
+				}else if(((OthelloButton)cols[i][j]).getButtonColor() == Color.RED){
+						red++;
 				}	
-					
-					
 			}
-			}
+		}
 		System.out.println("red = " + red + " yellow = " + yellow);
 		
 		Context context = getApplicationContext();
@@ -287,9 +282,46 @@ if (!checkIfMoreValidMoves(v)){
 		return false;
 	}
 	
+	public void setBoard(String board){
+		char[] theBoard = board.toCharArray();
+			int k=0;
+			out:
+			for(int i=0;i<8;i++){
+				for (int j=0;j<8;j++){
+					if (theBoard[k] == 'r'){
+						setMarkRed(((OthelloButton)cols[i][j])); 
+					}else if (theBoard[k] == 'y'){
+						setMarkYellow(((OthelloButton)cols[i][j]));
+					} else if (theBoard[k] == 'w'){
+						setMarkWhite(((OthelloButton)cols[i][j]));
+					}
+					k++;
+					if (k>(theBoard.length - 1)) {
+						break out;
+					}
+				}
+			}
+		
+	}
+	
 	private void flipMark(OthelloButton button) {
 		button.getBackground().setColorFilter(currentPlayerColor,PorterDuff.Mode.MULTIPLY);
 		button.setButtonColor(currentPlayerColor);
+	}
+	
+	private void setMarkRed(OthelloButton button) {
+		button.getBackground().setColorFilter(Color.RED,PorterDuff.Mode.MULTIPLY);
+		button.setButtonColor(Color.RED);
+	}
+	
+	private void setMarkYellow(OthelloButton button) {
+		button.getBackground().setColorFilter(Color.YELLOW,PorterDuff.Mode.MULTIPLY);
+		button.setButtonColor(Color.YELLOW);
+	}
+	
+	private void setMarkWhite(OthelloButton button) {
+		button.getBackground().setColorFilter(Color.WHITE,PorterDuff.Mode.MULTIPLY);
+		button.setButtonColor(Color.WHITE);
 	}
 
 	@Override

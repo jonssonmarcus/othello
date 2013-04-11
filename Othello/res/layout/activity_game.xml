@@ -610,4 +610,12 @@
         android:minHeight="34dip"
         android:minWidth="34dp" />
 
+    <Button
+        android:id="@+id/button62"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Button59"
+        android:layout_toLeftOf="@+id/Button06"
+        android:text="Restart" />
+
 </RelativeLayout>

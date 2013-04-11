@@ -83,13 +83,14 @@ public final class R {
         public static final int Button60=0x7f09003c;
         public static final int Button61=0x7f09003d;
         public static final int Button9=0x7f090009;
-        public static final int action_settings=0x7f090041;
+        public static final int action_settings=0x7f090042;
         public static final int button1=0x7f090001;
         public static final int button2=0x7f090002;
         public static final int button3=0x7f090003;
         public static final int button4=0x7f090004;
         public static final int button5=0x7f090005;
         public static final int button6=0x7f090006;
+        public static final int button62=0x7f090041;
         public static final int button7=0x7f090007;
         public static final int button8=0x7f090008;
         public static final int textView1=0x7f090000;
