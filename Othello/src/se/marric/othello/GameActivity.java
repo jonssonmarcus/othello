@@ -12,36 +12,25 @@ import android.widget.Toast;
 
 public class GameActivity extends Activity {
 
-	Button[][] cols;
-	int currentPlayerColor = Color.YELLOW;
-	int otherPlayer = Color.RED;
-	Boolean yourTurn = true;
-	Boolean isValidButtonChoosed = false;
-	Boolean isMoreValidMoves = true;
+	static Button[][] board;
+	static int currentPlayerColor = Color.YELLOW;
+	static int otherPlayerColor = Color.RED;
+	static Boolean yourTurn = true;
+	static Boolean isValidButtonChoosed = false;
+	static Boolean isMoreValidMoves = true;
+	private OthelloEngine oe;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_game);
-		
 		Bundle b = getIntent().getExtras();
 		
-		
-		int startValue = R.id.button1;
-		cols = new OthelloButton[8][8];
-		
-		for (int i = 0 ; i <8 ; i++) {
-			for (int j = 0; j < 8; j++) {
-				cols[i][j] = (OthelloButton) findViewById(startValue++);
-				
-				((OthelloButton)cols[i][j]).setOnClickListener(new View.OnClickListener() {
-		            public void onClick(View v) {
-		            	makeDraw(v);
-		            }
-		        });
-			}
-		}
+		board = new OthelloButton[8][8];		
+		addButtonListeners();
 	
+		oe = new OthelloEngine();
+		
 		if (b.getString("board") != null){
 			setBoard(b.getString("board"));
 		}
@@ -49,10 +38,10 @@ public class GameActivity extends Activity {
 		if (b.getString("yourColor") != null) {
 			if( b.getString("yourColor").equalsIgnoreCase("yellow") ){
 				currentPlayerColor = Color.YELLOW;
-				otherPlayer = Color.RED;
+				otherPlayerColor = Color.RED;
 			} else {
 				currentPlayerColor = Color.RED;
-				otherPlayer = Color.YELLOW;
+				otherPlayerColor = Color.YELLOW;
 			}
 		}
 		/*
@@ -74,28 +63,42 @@ public class GameActivity extends Activity {
 	
 	}
 
+	private void addButtonListeners() {
+		int startValue = R.id.button1;
+		for (int i = 0 ; i <8 ; i++) {
+			for (int j = 0; j < 8; j++) {
+				board[i][j] = (OthelloButton) findViewById(startValue++);
+				
+				((OthelloButton)board[i][j]).setOnClickListener(new View.OnClickListener() {
+		            public void onClick(View v) {
+		            	makeDraw(v);
+		            }
+		        });
+			}
+		}
+	}
+
 	protected boolean checkIfMoreValidMoves(View v) {
 		isMoreValidMoves = false;
 		for (int i = 0; i < 8; i++) {
 			for (int j = 0; j < 8; j++) {
-				//if (cols[i][j] == (OthelloButton)findViewById(v.getId())) {
-					makeTheDraw(i, j,(OthelloButton)cols[i][j], false);
-				//}
+					oe.makeTheDraw(i, j,(OthelloButton)board[i][j], false);
 			}
 		}
 		return isMoreValidMoves;
 	}
+	
 	protected void makeDraw(View v) {
 		for (int i = 0; i < 8; i++) {
 			for (int j = 0; j < 8; j++) {
-				if (cols[i][j] == (OthelloButton)findViewById(v.getId())) {
-					makeTheDraw(i, j,(OthelloButton)findViewById(v.getId()));
+				if (board[i][j] == (OthelloButton)findViewById(v.getId())) {
+					oe.makeTheDraw(i, j,(OthelloButton)findViewById(v.getId()));
 					if (isValidButtonChoosed) {
 						isValidButtonChoosed = false;
 						int tempa = currentPlayerColor;
-						int tempb = otherPlayer;
+						int tempb = otherPlayerColor;
 						currentPlayerColor = tempb;
-						otherPlayer = tempa;
+						otherPlayerColor = tempa;
 
 						computerDraw(v);
 
@@ -105,141 +108,32 @@ public class GameActivity extends Activity {
 		}
 	}
 	
-	private void makeTheDraw(int y, int x, OthelloButton button) {
-		makeTheDraw(y,x,button,true);
-	}
-
-	private void makeTheDraw(int y, int x, OthelloButton button, Boolean isRealDraw) {
-		int arrayIndex=0;
-		int xValue=0;
-		int yValue=0;
-		
-		if (button.getButtonColor() != Color.WHITE) {
-			return;
-		}
-		
-		//south
-		if (y!=7){   
-			yValue=y;
-			OthelloButton[] tempArray = new OthelloButton[7-yValue];
-			arrayIndex=0;
-			while (++yValue <8) {
-				tempArray[arrayIndex++] = ((OthelloButton)cols[yValue][x]);
-			}
-			flipMarkers(button, tempArray, isRealDraw);
-		}
-		
-		//north
-		if (y!=0){
-			yValue=y;
-			OthelloButton[] tempArray2 = new OthelloButton[yValue];
-			arrayIndex=0;
-			while (--yValue >=0) {
-				tempArray2[arrayIndex++] = ((OthelloButton)cols[yValue][x]);
-			}
-			flipMarkers(button, tempArray2, isRealDraw);
-		}
-		
-		//east
-		if (x != 7) {
-			xValue=x;
-			OthelloButton[] tempArray3 = new OthelloButton[7-xValue];
-			arrayIndex=0;
-			while (++xValue <8) {
-				tempArray3[arrayIndex++] = ((OthelloButton)cols[y][xValue]);
-			}
-			flipMarkers(button, tempArray3, isRealDraw);
-		}
-		
-		//west
-		if (x != 0){
-			xValue=x;
-			OthelloButton[] tempArray4 = new OthelloButton[xValue];
-			arrayIndex=0;
-			while (--xValue >=0) {
-				tempArray4[arrayIndex++] = ((OthelloButton)cols[y][xValue]);
-			}
-			flipMarkers(button, tempArray4, isRealDraw);
-		}
-		
-		//north west
-		if (y != 0 && x != 0) {
-			yValue = y;
-			xValue = x;
-			System.out.println("math min " + Math.min(yValue, xValue));
-			OthelloButton[] tempArray5 = new OthelloButton[Math.min(yValue, xValue)];
-			arrayIndex=0;
-			while (--yValue != -1 && --xValue != -1) {
-				tempArray5[arrayIndex++] = ((OthelloButton)cols[yValue][xValue]);
-			}
-			flipMarkers(button, tempArray5, isRealDraw);
-		}
-		
-		//nort east
-		if (y != 0 && x != 7) {
-			yValue = y;
-			xValue = x;
-			OthelloButton[] tempArray6 = new OthelloButton[Math.min(yValue, 7-xValue)];
-			arrayIndex=0;
-			while (--yValue != -1 && ++xValue != 8) {
-				tempArray6[arrayIndex++] = ((OthelloButton)cols[yValue][xValue]);
-			}
-			flipMarkers(button, tempArray6, isRealDraw);
-		}
-		
-		//south west
-		if (y != 7 && x != 0) {
-			yValue = y;
-			xValue = x;
-			OthelloButton[] tempArray8 = new OthelloButton[Math.min(7-yValue, xValue)];
-			arrayIndex=0;
-			while (++yValue != 8 && --xValue != -1) {
-				tempArray8[arrayIndex++] = ((OthelloButton)cols[yValue][xValue]);
-			}
-			flipMarkers(button, tempArray8, isRealDraw);
-		}
-		
-		//south east
-		if (y != 7 && x != 7) {
-			yValue = y;
-			xValue = x;
-			OthelloButton[] tempArray7 = new OthelloButton[Math.min(7-yValue, 7-xValue)];
-			arrayIndex=0;
-			while (++yValue != 8 && ++xValue != 8) {
-				tempArray7[arrayIndex++] = ((OthelloButton)cols[yValue][xValue]);
-			}
-			flipMarkers(button, tempArray7, isRealDraw);
-		}
-		
-		
-	}
-
 	private void computerDraw(View v) {
 		
 		out:
 			for (int u=0;u<8;u++) {
 				for(int uu=0; uu<8; uu++) {
-					makeTheDraw(u, uu,((OthelloButton)cols[u][uu]));
+					oe.makeTheDraw(u, uu,((OthelloButton)board[u][uu]));
 					if (isValidButtonChoosed) {
 						//isValidButtonChoosed = false;
 						int tempa = currentPlayerColor;
-						int tempb = otherPlayer;
+						int tempb = otherPlayerColor;
 						currentPlayerColor = tempb;
-						otherPlayer = tempa;
+						otherPlayerColor = tempa;
 						break out;
 					}
 				}
 			
 		}
-	if (!isValidButtonChoosed) {
-		System.out.println("Computer loosed");
-		checkWhoWon();
-	}
-if (!checkIfMoreValidMoves(v)){
-	System.out.println("you loosed");
-	checkWhoWon();
-}
-	isValidButtonChoosed = false;
+		if (!isValidButtonChoosed) {
+			System.out.println("Computer loosed");
+			checkWhoWon();
+		}
+		if (!checkIfMoreValidMoves(v)){
+			System.out.println("you loosed");
+			checkWhoWon();
+		}
+		isValidButtonChoosed = false;
 		// TODO Auto-generated method stub
 		yourTurn = true;
 	}
@@ -249,66 +143,55 @@ if (!checkIfMoreValidMoves(v)){
 		int yellow = 0;
 		for (int i = 0; i < 8; i++) {
 			for (int j = 0; j < 8; j++) {
-				if (((OthelloButton)cols[i][j]).getButtonColor() == Color.YELLOW){
+				if (((OthelloButton)board[i][j]).getButtonColor() == Color.YELLOW){
 					yellow++;
-				}else if(((OthelloButton)cols[i][j]).getButtonColor() == Color.RED){
+				}else if(((OthelloButton)board[i][j]).getButtonColor() == Color.RED){
 						red++;
 				}	
 			}
 		}
-		System.out.println("red = " + red + " yellow = " + yellow);
-		
 		Context context = getApplicationContext();
 		
 		CharSequence text = "";
-		if (red < yellow) {
-			text = "You won!! Red=" + red + " Yellow=" + yellow;
-		}  
-			else if(red == yellow){
-				text = "Tie!! Red=" + red + " Yellow=" + yellow;
-			
+		if(red != yellow){
+			text = (red<yellow) ? "You won!!" : "Computer won!!"; 
 		} else {
-			text = "Computer won!! Red=" + red + " Yellow=" + yellow;
+			text = "Tie!!";
 		}
-		int duration = Toast.LENGTH_LONG;
+		text = text + "  Red=" + red + " Yellow=" + yellow;
 
-		Toast toast = Toast.makeText(context, text, duration);
+		Toast toast = Toast.makeText(context, text, Toast.LENGTH_LONG);
 		toast.show();
 	}
-
-	private Boolean flipMarkers(OthelloButton button, OthelloButton[] tempArray, Boolean realDraw) {
-		int arrayIndex = 0;
-		while (arrayIndex < tempArray.length && ((OthelloButton)tempArray[arrayIndex]).getButtonColor()==(otherPlayer)   ) {
-			arrayIndex++;
-			}
-		if (arrayIndex!=0 && arrayIndex < tempArray.length && ((OthelloButton)tempArray[arrayIndex]).getButtonColor()==(currentPlayerColor) ){
-			if (!realDraw) {
-				isMoreValidMoves = true;
-				return true;
-			}
-			for (int indexOfMarkToFlip=0; indexOfMarkToFlip<arrayIndex;indexOfMarkToFlip++) {
-				flipMark((OthelloButton)tempArray[indexOfMarkToFlip]);
-			}
-			flipMark(button);
-		
-			isValidButtonChoosed = true;
-			return true;
-		}
-		return false;
-	}
 	
-	public void setBoard(String board){
-		char[] theBoard = board.toCharArray();
+	public String getBoardAsString(){
+		StringBuilder boardString = new StringBuilder();
+		for(int i=0; i<8;i++){
+			for(int j=0;j<8;j++){
+				if ( ((OthelloButton)board[i][j]).getButtonColor() == Color.RED ) {
+				boardString.append('r');
+				} else if( ((OthelloButton)board[i][j]).getButtonColor() == Color.YELLOW ){
+					boardString.append('y');
+				} else {
+					boardString.append('e');
+				}
+			}
+		}
+		return boardString.toString();
+	}
+		
+	public void setBoard(String boardString){
+		char[] theBoard = boardString.toCharArray();
 			int k=0;
 			out:
 			for(int i=0;i<8;i++){
 				for (int j=0;j<8;j++){
 					if (theBoard[k] == 'r'){
-						setMarkRed(((OthelloButton)cols[i][j])); 
+						setMarkColor(((OthelloButton)board[i][j]), Color.RED); 
 					}else if (theBoard[k] == 'y'){
-						setMarkYellow(((OthelloButton)cols[i][j]));
+						setMarkColor(((OthelloButton)board[i][j]), Color.YELLOW);
 					} else if (theBoard[k] == 'w'){
-						setMarkWhite(((OthelloButton)cols[i][j]));
+						setMarkColor(((OthelloButton)board[i][j]), Color.WHITE);
 					}
 					k++;
 					if (k>(theBoard.length - 1)) {
@@ -316,27 +199,11 @@ if (!checkIfMoreValidMoves(v)){
 					}
 				}
 			}
+	}
 		
-	}
-	
-	private void flipMark(OthelloButton button) {
-		button.getBackground().setColorFilter(currentPlayerColor,PorterDuff.Mode.MULTIPLY);
-		button.setButtonColor(currentPlayerColor);
-	}
-	
-	private void setMarkRed(OthelloButton button) {
-		button.getBackground().setColorFilter(Color.RED,PorterDuff.Mode.MULTIPLY);
-		button.setButtonColor(Color.RED);
-	}
-	
-	private void setMarkYellow(OthelloButton button) {
-		button.getBackground().setColorFilter(Color.YELLOW,PorterDuff.Mode.MULTIPLY);
-		button.setButtonColor(Color.YELLOW);
-	}
-	
-	private void setMarkWhite(OthelloButton button) {
-		button.getBackground().setColorFilter(Color.WHITE,PorterDuff.Mode.MULTIPLY);
-		button.setButtonColor(Color.WHITE);
+	private void setMarkColor(OthelloButton button, int color) {
+		button.getBackground().setColorFilter(color,PorterDuff.Mode.MULTIPLY);
+		button.setButtonColor(color);
 	}
 
 	@Override
