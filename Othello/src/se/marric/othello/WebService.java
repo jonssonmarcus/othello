@@ -12,10 +12,15 @@ import org.apache.http.util.EntityUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class WebService {
+import android.os.AsyncTask;
+
+public class WebService extends AsyncTask<Void, Void, String>{
 
 	HttpClient client;
 	final static String URL = "http://othelloapp.appspot.com/api/a/getstring";
+	
+	
+	
 	public String getBoardAsString() {
 	
 		JSONObject board = null;
@@ -58,6 +63,11 @@ public class WebService {
 			return null;
 		}
 		
+	}
+
+	@Override
+	protected String doInBackground(Void... params) {
+		return getBoardAsString();
 	}
 	
 	
