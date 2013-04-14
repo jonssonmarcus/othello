@@ -9,6 +9,8 @@ import android.widget.Toast;
 
 public class StartActivity extends Activity {
 
+	WebService ws;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -42,9 +44,11 @@ public class StartActivity extends Activity {
 	}
 
 	private void startGame() {
+		ws = new WebService();
 		 Intent i = new Intent(this, GameActivity.class);
 	     Bundle b = new Bundle();
-	     b.putString("board", "rrwrerwyrryyyyyyyyrrrerrryyyyyyrr"); //get the board from a WS
+	     //b.putString("board", "rrwrerwyrryyyyyyyyrrrerrryyyyyyrr"); //get the board from a WS
+	     b.putString("board", ws.getBoardAsString()); //get the board from a WS
 	     b.putString("yourColor", "yellow"); // check in database or with a WS
 	     i.putExtras(b);
 	        
