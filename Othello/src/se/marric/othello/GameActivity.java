@@ -1,5 +1,7 @@
 package se.marric.othello;
 
+import java.util.concurrent.ExecutionException;
+
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
@@ -76,6 +78,26 @@ public class GameActivity extends Activity {
 		        });
 			}
 		}
+		final Button button62 = (Button) findViewById(R.id.button62);
+		button62.setOnClickListener(new View.OnClickListener() {
+			
+			
+			@Override
+			public void onClick(View v) {
+				WebService ws = new WebService();
+				ws.execute();
+				try {
+					setBoard(ws.get());
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (ExecutionException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+			}
+		});
 	}
 
 	protected boolean checkIfMoreValidMoves(View v) {
