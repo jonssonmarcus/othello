@@ -12,6 +12,9 @@ import org.apache.http.util.EntityUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.parse.Parse;
+import com.parse.ParseAnalytics;
+
 import android.os.AsyncTask;
 
 public class WebService extends AsyncTask<Void, Void, String>{
@@ -20,8 +23,13 @@ public class WebService extends AsyncTask<Void, Void, String>{
 	final static String URL = "http://othelloapp.appspot.com/api/a/getstring";
 	
 	
+
+	
+	
+	
 	
 	public String getBoardAsString() {
+	
 	
 		JSONObject board = null;
 		try {
